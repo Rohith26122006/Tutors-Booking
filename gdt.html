@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutors Tuition - Expert Home Tutoring</title>
+    <style>
+        
+        body{
+            background-image: url(images/blurry-gradient-haikei.png);
+            background-size: cover;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            color: black;
+        }
+        .me{
+            margin: 0px;
+            font-size: 20px;
+            text-decoration:underline;
+            font-style: oblique;
+        }
+        #booking form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        #booking input,
+        #booking select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        #booking button {
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            background: var(--secondary-color);
+            color: white;
+            background-color: #e67e22;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        #booking button:hover {
+            background-color: #e67e22;
+        }
+        .ms{
+            text-align: center;
+            font-size: larger;
+            margin: 0px;
+
+        }
+    </style>
+</head>
+<body>
+    
+
+    <section id="booking">
+        <div class="container">
+            <h1>Tutor Registration Form</h1>
+            <form id="bookingForm">
+                <p class="me">Your Name:</p>
+                <input type="text" id="name" placeholder="Full Name" required>
+                <p class="me">Mobile Number:</p>
+                <input type="tel" id="mobile" placeholder="Mobile Number" required>
+                <p class="me">Email Address:</p>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <p class="me">Address:</p>
+                <input type="text" id="school" placeholder="Address" required>
+                <p class="me">Subject Interested to Teach:</p>
+                <select id="subject" required>
+                    <option value="">Select Subject:</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="physics">Physics</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="biology">Biology</option>
+                    <option value="english">English</option>
+                    <option value="history">History</option>
+                    <option value="computer_science">Computer Science</option>
+                </select>
+                <p class="me">State:</p>
+                <input type="text" id="state" placeholder="State" required>
+                <p class="ms">Make sure that provided Information is Correct!!!</p>
+                <button type="submit" class="button_1">Register Here</button>
+            </form>
+        </div>
+    </section>
+    
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            alert("We'll contact you shortly! Thank You for Registering");
+            window.location.href = "index.html"; 
+        });
+    </script>
+    
+
+
+    <script>
+
+
+        function validateForm(name, mobile, email, school, subject, state) {
+            if (!name || !mobile || !email || !school || !subject || !state) {
+                return false;
+            }
+            
+            
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                return false;
+            }
+            
+            
+            var mobileRegex = /^\d{10}$/;
+            if (!mobileRegex.test(mobile)) {
+                return false;
+            }
+            
+            return true;
+        }
+
+
+    </script>
+</body>
+</html>
